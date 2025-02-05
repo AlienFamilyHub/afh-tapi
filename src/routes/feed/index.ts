@@ -49,7 +49,7 @@ export default eventHandler(async (event) => {
 	const hasNextPage = page < totalPages;
 	const hasPrevPage = page > 1;
 
-	return new Response(JSON.stringify({
+	const response: ApiResponse = {
 		code: "200",
 		status: "success",
 		data: filteredFeeds,
@@ -63,8 +63,12 @@ export default eventHandler(async (event) => {
 				has_prev_page: hasPrevPage,
 			},
 		},
-	}), {
+	};
+
+	return new Response(JSON.stringify(response), {
 		status: 200,
-		headers: { "Content-Type": "application/json" },
+		headers: {
+			"Content-Type": "application/json",
+		},
 	});
 });
