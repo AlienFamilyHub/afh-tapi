@@ -17,6 +17,7 @@ const parser = new Parser({
 			["link", "link"],
 			["published", "date"],
 			["pubDate", "date"],
+			["updated", "date"],
 			["dc:creator", "author"],
 			["creator", "author"],
 			["author", "author"],
