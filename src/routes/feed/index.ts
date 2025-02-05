@@ -37,7 +37,7 @@ export default eventHandler(async (event) => {
 	}
 
 	const skip = (page - 1) * size;
-	const queryOptions = query.page || query.size ? { skip, limit: size } : {};
+	const queryOptions = { skip, limit: size, sort: { date: -1 } }; // 按时间降序排序
 
 	const totalCount = await db_read("afh-tapi", "feeds", {}, {});
 	const feeds = await db_read("afh-tapi", "feeds", {}, queryOptions);
