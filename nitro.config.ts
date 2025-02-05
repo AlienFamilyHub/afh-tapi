@@ -12,6 +12,7 @@ const runtimeEnv = {
 	MONGO_PASSWORD: process.env.MONGO_PASSWORD,
 	AI_HOST: process.env.AI_HOST,
 	AI_TOKEN: process.env.AI_TOKEN,
+	AI_MODEL: process.env.AI_MODEL,
 };
 
 export default defineNitroConfig({

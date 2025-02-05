@@ -11,7 +11,7 @@ export async function generateSummary(description: string) {
 		});
 
 		const response = await openai.chat.completions.create({
-			model: "GLM-4-Flash",
+			model: RuntimeConfig.AI_MODEL,
 			messages: [
 				{
 					role: "system",
