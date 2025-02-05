@@ -15,6 +15,9 @@ const parser = new Parser({
 		item: [
 			["title", "title"],
 			["link", "link"],
+			["created", "date"],
+			["pubdate", "date"],
+			["dc:date", "date"],
 			["published", "date"],
 			["pubDate", "date"],
 			["updated", "date"],
