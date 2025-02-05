@@ -8,10 +8,12 @@ module.exports = {
 			instances: 1,
 			exec_mode: "fork",
 			env: {
-				NODE_ENV: "development PORT=1142",
+				NODE_ENV: "development",
+				PORT: 1142,
 			},
 			env_production: {
-				NODE_ENV: "production PORT=1142",
+				NODE_ENV: "production",
+				PORT: 1142,
 			},
 			log_date_format: "YYYY-MM-DD HH:mm:ss",
 			error_file: "./logs/preview-error.log",
