@@ -1,11 +1,11 @@
 {
 	"private": true,
-	"packageManager": "pnpm@10.1.0",
+	"packageManager": "pnpm@10.2.0",
 	"scripts": {
-		"build": "nitro build",
-		"dev": "nitro dev",
+		"build": "cross-env PORT=1142 nitro build",
+		"dev": "cross-env PORT=1142 nitro dev",
 		"prepare": "nitro prepare",
-		"preview": "node .output/server/index.mjs"
+		"preview": "cross-env PORT=1142 node .output/server/index.mjs"
 	},
 	"dependencies": {
 		"mongodb": "^6.13.0",
@@ -15,6 +15,7 @@
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^4.1.1",
+		"cross-env": "^7.0.3",
 		"eslint": "^9.19.0",
 		"eslint-plugin-format": "^1.0.1",
 		"nitropack": "latest"
