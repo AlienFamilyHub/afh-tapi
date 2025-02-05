@@ -1,6 +1,3 @@
-import type { H3Event } from "h3";
-import { eventHandler } from "h3";
-
 interface ResponseData {
 	version: number;
 	ServerTime: Date;
@@ -8,7 +5,7 @@ interface ResponseData {
 	IP: string;
 }
 
-export default eventHandler(async (event: H3Event) => {
+export default eventHandler(async (event) => {
 	const headers = getHeaders(event);
 	const ip = headers["cf-connecting-ip"] || headers["x-forwarded-for"] || headers["remote-addr"];
 	const ua = headers["user-agent"];
