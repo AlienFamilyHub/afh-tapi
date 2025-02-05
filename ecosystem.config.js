@@ -2,8 +2,8 @@ module.exports = {
 	apps: [
 		{
 			name: "afh-tapi",
-			script: "node",
-			args: ".output/server/index.mjs",
+			script: "cross-env PORT=1142 pnpm",
+			args: "preview",
 			cwd: "./",
 			instances: 1,
 			exec_mode: "fork",
