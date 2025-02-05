@@ -2,8 +2,8 @@ module.exports = {
 	apps: [
 		{
 			name: "afh-tapi",
-			script: "pnpm",
-			args: "preview",
+			script: "node",
+			args: ".output/server/index.mjs",
 			cwd: "./",
 			instances: 1,
 			exec_mode: "fork",
