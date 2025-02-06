@@ -8,7 +8,6 @@ interface Feed {
 	description: string;
 	date: string;
 	author: string;
-	summary: string | null;
 }
 
 const parser = new Parser({
@@ -16,20 +15,22 @@ const parser = new Parser({
 		item: [
 			["title", "title"],
 			["link", "link"],
-			["created", "date"],
-			["pubdate", "date"],
-			["dc:date", "date"],
-			["published", "date"],
-			["pubDate", "date"],
+
 			["updated", "date"],
+			["pubDate", "date"],
+			["published", "date"],
+			["dc:date", "date"],
+			["pubdate", "date"],
+			["created", "date"],
+
 			["dc:creator", "author"],
-			["creator", "author"],
 			["author", "author"],
+			["creator", "author"],
+
+			["summary", "description"],
+			["description", "description"],
 			["content:encoded", "description"],
 			["content", "description"],
-			["description", "description"],
-
-			["summary", "summary"],
 		],
 	},
 });
@@ -61,7 +62,6 @@ async function fetchFeed(url: string): Promise<Feed[]> {
 				description: item.description || "",
 				date: parsedDate,
 				author: item.author || feed.title || "Unknown",
-				summary: item.summary || null,
 			};
 		});
 	} catch (error) {

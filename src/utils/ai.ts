@@ -5,7 +5,6 @@ const RuntimeConfig = useRuntimeConfig();
 export async function generateSummary(description: string) {
 	console.info("AI 生成摘要中...");
 
-	// 获取多个 AI 配置
 	const aiHosts = RuntimeConfig.AI_HOSTS || [];
 	const aiTokens = RuntimeConfig.AI_TOKENS || [];
 	const aiModels = RuntimeConfig.AI_MODELS || [];

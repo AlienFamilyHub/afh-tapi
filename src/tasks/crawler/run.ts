@@ -19,16 +19,8 @@ export default defineTask({
 				const existing = await db_find("afh-tapi", "feeds", { id: feed.id });
 				if (!existing) {
 					console.info("New feed found:", feed.title);
-					let summary = feed.summary;
-
-					if (!summary) {
-						if (feed.description.length < 120) {
-							summary = feed.description;
-						} else {
-							summary = await generateSummary(feed.description);
-							await new Promise(resolve => setTimeout(resolve, 1000));
-						}
-					}
+					const summary = await generateSummary(feed.description);
+					await new Promise(resolve => setTimeout(resolve, 1000));
 
 					const feedWithSummary = { ...feed, summary };
 					await db_insert("afh-tapi", "feeds", feedWithSummary);
