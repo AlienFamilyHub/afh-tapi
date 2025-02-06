@@ -12,5 +12,6 @@ export default antfu({
 		"antfu/top-level-function": "off",
 		// no-console 允许info和warn、error
 		"no-console": ["error", { allow: ["info", "warn", "error"] }],
+		"brace-style": ["error", "1tbs", { allowSingleLine: true }],
 	},
 });

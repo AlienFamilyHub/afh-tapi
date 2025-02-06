@@ -19,19 +19,26 @@ export default defineTask({
 				const existing = await db_find("afh-tapi", "feeds", { id: feed.id });
 				if (!existing) {
 					console.info("New feed found:", feed.title);
-					const summary = await generateSummary(feed.description);
-					await new Promise(resolve => setTimeout(resolve, 1000));
+					let summary = feed.summary;
+
+					if (!summary) {
+						if (feed.description.length < 120) {
+							summary = feed.description;
+						} else {
+							summary = await generateSummary(feed.description);
+							await new Promise(resolve => setTimeout(resolve, 1000));
+						}
+					}
+
 					const feedWithSummary = { ...feed, summary };
 					await db_insert("afh-tapi", "feeds", feedWithSummary);
 					processedFeeds.push(feedWithSummary);
-				}
-				else {
+				} else {
 					console.info("Existing feed found:", feed.title);
 				}
 			}
 			return { result: "success" };
-		}
-		catch (error) {
+		} catch (error) {
 			console.error("Error fetching feed:", error);
 			return { result: "failed" };
 		}

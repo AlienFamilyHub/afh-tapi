@@ -8,6 +8,7 @@ interface Feed {
 	description: string;
 	date: string;
 	author: string;
+	summary: string | null;
 }
 
 const parser = new Parser({
@@ -27,7 +28,8 @@ const parser = new Parser({
 			["content:encoded", "description"],
 			["content", "description"],
 			["description", "description"],
-			["summary", "description"],
+
+			["summary", "summary"],
 		],
 	},
 });
@@ -59,10 +61,10 @@ async function fetchFeed(url: string): Promise<Feed[]> {
 				description: item.description || "",
 				date: parsedDate,
 				author: item.author || feed.title || "Unknown",
+				summary: item.summary || null,
 			};
 		});
-	}
-	catch (error) {
+	} catch (error) {
 		console.error(`Error fetching feed from ${url}:`, error);
 		return [];
 	}

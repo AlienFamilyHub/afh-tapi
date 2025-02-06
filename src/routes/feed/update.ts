@@ -7,8 +7,7 @@ export default eventHandler(async () => {
 			status: "success",
 		};
 		return response;
-	}
-	else {
+	} else {
 		const response: ApiResponse = {
 			code: "500",
 			status: "error",
