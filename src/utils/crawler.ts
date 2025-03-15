@@ -53,7 +53,7 @@ async function fetchFeed(url: string): Promise<Feed[]> {
 		const feed = await parser.parseString(xml);
 
 		return feed.items.map((item) => {
-			const id = crypto.createHash("md5").update((item.title || "") + (item.author || "")).digest("hex");
+			const id = crypto.createHash("md5").update(item.link || "").digest("hex");
 			const parsedDate = item.date ? new Date(item.date).toISOString() : "";
 			return {
 				id,

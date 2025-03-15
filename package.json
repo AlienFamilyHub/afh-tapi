@@ -8,16 +8,16 @@
 		"preview": "cross-env PORT=1142 node .output/server/index.mjs"
 	},
 	"dependencies": {
-		"fast-xml-parser": "^5.0.8",
-		"mongodb": "^6.14.1",
-		"openai": "^4.86.1",
+		"fast-xml-parser": "^5.0.9",
+		"mongodb": "^6.14.2",
+		"openai": "^4.87.3",
 		"rss-parser": "^3.13.0",
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^4.4.0",
+		"@antfu/eslint-config": "^4.10.1",
 		"cross-env": "^7.0.3",
-		"eslint": "^9.21.0",
+		"eslint": "^9.22.0",
 		"eslint-plugin-format": "^1.0.1",
 		"nitropack": "2.10.4"
 	}
