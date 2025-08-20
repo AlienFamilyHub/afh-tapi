@@ -19,6 +19,6 @@
 		"cross-env": "^7.0.3",
 		"eslint": "^9.33.0",
 		"eslint-plugin-format": "^1.0.1",
-		"nitropack": "2.11.13"
+		"nitropack": "2.12.4"
 	}
 }
