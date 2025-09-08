@@ -10,7 +10,7 @@
 	"dependencies": {
 		"fast-xml-parser": "^5.2.5",
 		"mongodb": "^6.19.0",
-		"openai": "^5.19.1",
+		"openai": "^5.20.0",
 		"rss-parser": "^3.13.0",
 		"sharp": "^0.34.3"
 	},
