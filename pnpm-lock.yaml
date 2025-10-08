@@ -15,8 +15,8 @@ importers:
         specifier: ^6.19.0
         version: 6.19.0
       openai:
-        specifier: ^5.23.1
-        version: 5.23.1(zod@3.25.76)
+        specifier: ^6.2.0
+        version: 6.2.0(zod@3.25.76)
       rss-parser:
         specifier: ^3.13.0
         version: 3.13.0
@@ -2815,12 +2815,12 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
-  openai@5.23.1:
-    resolution: {integrity: sha512-APxMtm5mln4jhKhAr0d5zP9lNsClx4QwJtg8RUvYSSyxYCTHLNJnLEcSHbJ6t0ori8Pbr9HZGfcPJ7LEy73rvQ==}
+  openai@6.2.0:
+    resolution: {integrity: sha512-qqjzHls7F5xkXNGy9P1Ei1rorI5LWupUUFWP66zPU8FlZbiITX8SFcHMKNZg/NATJ0LpIZcMUFxSwQmdeQPwSw==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
-      zod: ^3.23.8
+      zod: ^3.25 || ^4.0
     peerDependenciesMeta:
       ws:
         optional: true
@@ -6593,7 +6593,7 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@5.23.1(zod@3.25.76):
+  openai@6.2.0(zod@3.25.76):
     optionalDependencies:
       zod: 3.25.76
 
