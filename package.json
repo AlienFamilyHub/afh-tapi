@@ -17,7 +17,7 @@
 	"devDependencies": {
 		"@antfu/eslint-config": "^6.5.1",
 		"cross-env": "^10.1.0",
-		"eslint": "^9.39.1",
+		"eslint": "^9.39.2",
 		"eslint-plugin-format": "^1.1.0",
 		"nitropack": "2.12.9"
 	}
